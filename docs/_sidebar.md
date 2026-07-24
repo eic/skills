@@ -5,6 +5,7 @@
 * [Governance](governance.md)
 * [Release process](release-process.md)
 * Integrations
+  * [Plugin marketplace](integrations/marketplace.md)
   * [Claude Desktop](integrations/claude-desktop.md)
   * [Cursor](integrations/cursor.md)
   * [VS Code](integrations/vscode.md)

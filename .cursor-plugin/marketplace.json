@@ -1,0 +1,18 @@
+{
+  "name": "eic-skills",
+  "owner": {
+    "name": "EIC Collaboration",
+    "url": "https://github.com/eic"
+  },
+  "metadata": {
+    "description": "EIC community agents and skills for simulation, reconstruction, geometry, and collaboration workflows.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "eic-skills",
+      "source": ".",
+      "description": "Reusable EIC agents and skills for particle physics simulation, reconstruction, geometry validation, and collaboration workflows."
+    }
+  ]
+}
