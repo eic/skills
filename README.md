@@ -4,7 +4,8 @@
 
 It provides:
 - Reusable, tool-agnostic definitions for agents, skills, and packs.
-- Integration instructions for Claude Desktop, Cursor, and VS Code.
+- GitHub Copilot CLI plugin packaging (`plugin.json` + `copilot-plugin/` assets).
+- Integration instructions for Copilot CLI, Claude Desktop, Cursor, and VS Code.
 - Validation tooling and CI checks so contributed content stays consistent.
 
 ## Quick start
@@ -27,6 +28,7 @@ It provides:
 
 - Claude Desktop
 - Cursor
+- GitHub Copilot CLI
 - VS Code
 
 See `docs/compatibility-matrix.md` and `docs/integrations/`.
