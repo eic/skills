@@ -1,0 +1,38 @@
+{
+  "name": "eic-skills",
+  "version": "1.0.0",
+  "description": "Reusable EIC agents and skills for particle physics simulation, reconstruction, geometry validation, and collaboration workflows.",
+  "author": {
+    "name": "EIC Collaboration",
+    "url": "https://github.com/eic"
+  },
+  "homepage": "https://eic.github.io/skills/",
+  "repository": "https://github.com/eic/skills",
+  "license": "MIT",
+  "keywords": [
+    "eic",
+    "particle-physics",
+    "simulation",
+    "reconstruction",
+    "detector-geometry",
+    "agents",
+    "skills"
+  ],
+  "skills": "./copilot-plugin/skills/",
+  "interface": {
+    "displayName": "EIC Skills",
+    "shortDescription": "Guided help for EIC particle physics simulation, reconstruction, and detector workflows.",
+    "longDescription": "The EIC (Electron-Ion Collider) skills plugin provides reusable agents and skills for particle physics workflows including simulation configuration, detector geometry validation, reconstruction log investigation, plotting and QA, release notes, issue triage, and pull request review.",
+    "developerName": "EIC Collaboration",
+    "category": "Science",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Help me validate my detector geometry configuration",
+      "Review this reconstruction log for issues",
+      "Triage this issue in the EIC software repository"
+    ]
+  }
+}
