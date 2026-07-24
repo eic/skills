@@ -30,3 +30,9 @@ It provides:
 - VS Code
 
 See `docs/compatibility-matrix.md` and `docs/integrations/`.
+
+## Documentation site
+
+Repository docs are published to GitHub Pages with Docsify from `docs/`.
+After GitHub Pages is enabled for the repository, the site URL is:
+`https://eic.github.io/skills/`.
