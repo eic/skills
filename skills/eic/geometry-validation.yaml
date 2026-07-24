@@ -1,0 +1,24 @@
+apiVersion: eic.ai/v1
+kind: Skill
+metadata:
+  id: geometry-validation
+  name: Geometry Validation
+  version: 1.0.0
+  owners: [eic]
+  tags: [eic, geometry, detector]
+spec:
+  purpose: Validate detector geometry changes and isolate geometry-specific faults.
+  procedure:
+    - Record geometry version and relevant configuration inputs.
+    - Run overlap and placement checks with captured logs.
+    - Compare warnings and errors against baseline outputs.
+    - Report suspected components and verification reruns.
+  constraints:
+    - Keep reconstruction-side effects separate from geometry defects.
+    - Include command lines and log excerpts for each finding.
+  inputs: [geometry_config, validation_logs, baseline_logs]
+  outputs: [validation_report, suspected_components, rerun_plan]
+  examples:
+    - prompt: Validate a new detector geometry commit with overlap warnings.
+      outcome: Returns prioritized defect candidates with traceable evidence.
+

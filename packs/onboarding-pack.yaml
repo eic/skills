@@ -1,0 +1,19 @@
+apiVersion: eic.ai/v1
+kind: Pack
+metadata:
+  id: onboarding-pack
+  name: Onboarding Pack
+  version: 1.0.0
+  owners: [eic]
+  tags: [onboarding, general]
+spec:
+  summary: Starter bundle for new contributors learning EIC AI workflows and repository conventions.
+  agents:
+    - eic-general-assistant
+    - docs-maintainer
+  skills:
+    - issue-triage
+    - pr-review
+  prompts:
+    - prompts/templates/bug-investigation.md
+

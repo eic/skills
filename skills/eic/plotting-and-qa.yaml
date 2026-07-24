@@ -1,0 +1,24 @@
+apiVersion: eic.ai/v1
+kind: Skill
+metadata:
+  id: plotting-and-qa
+  name: Plotting and QA
+  version: 1.0.0
+  owners: [eic]
+  tags: [eic, analysis, qa, plotting]
+spec:
+  purpose: Produce reproducible analysis plots and accompanying quality assurance checks.
+  procedure:
+    - Define required inputs, selection criteria, and expected outputs.
+    - Build plot generation steps with explicit parameters.
+    - Run QA checks on binning, normalization, and uncertainties.
+    - Summarize interpretation caveats and next actions.
+  constraints:
+    - Preserve reproducibility through explicit commands and versions.
+    - Separate plotting defects from underlying data-quality issues.
+  inputs: [analysis_code, dataset_metadata, figure_requirements]
+  outputs: [plotting_steps, qa_results, interpretation_notes]
+  examples:
+    - prompt: Recreate a figure for internal review and provide QA notes.
+      outcome: Produces deterministic plotting instructions and QA summary.
+

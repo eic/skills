@@ -1,0 +1,24 @@
+apiVersion: eic.ai/v1
+kind: Skill
+metadata:
+  id: release-notes
+  name: Release Notes
+  version: 1.0.0
+  owners: [eic]
+  tags: [release, docs]
+spec:
+  purpose: Produce clear release notes grouped by user impact and migration requirements.
+  procedure:
+    - Collect merged changes and related issues.
+    - Group by added, changed, fixed, and deprecated behavior.
+    - Highlight migration steps and operational risks.
+    - Produce concise summaries for both users and maintainers.
+  constraints:
+    - Do not omit known breaking changes.
+    - Keep wording consistent with repository terminology.
+  inputs: [merged_prs, issues, changelog_context]
+  outputs: [release_notes, migration_notes]
+  examples:
+    - prompt: Draft release notes for a monthly update with one breaking config change.
+      outcome: Produces categorized notes with explicit migration actions.
+

@@ -1,0 +1,19 @@
+apiVersion: eic.ai/v1
+kind: Pack
+metadata:
+  id: analysis-pack
+  name: Analysis Pack
+  version: 1.0.0
+  owners: [eic]
+  tags: [analysis, qa]
+spec:
+  summary: Bundle for analysis plotting reproducibility, QA, and review support.
+  agents:
+    - analysis-assistant
+    - eic-general-assistant
+  skills:
+    - plotting-and-qa
+    - pr-review
+  prompts:
+    - prompts/templates/paper-figure-reproduction.md
+

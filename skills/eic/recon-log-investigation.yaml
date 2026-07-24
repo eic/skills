@@ -1,0 +1,24 @@
+apiVersion: eic.ai/v1
+kind: Skill
+metadata:
+  id: recon-log-investigation
+  name: Reconstruction Log Investigation
+  version: 1.0.0
+  owners: [eic]
+  tags: [eic, reconstruction, logs]
+spec:
+  purpose: Investigate reconstruction logs to isolate regressions, failures, and pipeline bottlenecks.
+  procedure:
+    - Identify earliest anomaly signatures in logs.
+    - Correlate anomalies with reconstruction stages and config context.
+    - Separate deterministic failures from intermittent symptoms.
+    - Produce a ranked hypothesis list with next checks.
+  constraints:
+    - Include exact log anchors for every hypothesis.
+    - Keep hypotheses ranked by evidence strength.
+  inputs: [reconstruction_logs, config_snapshot, baseline_logs]
+  outputs: [anomaly_map, ranked_hypotheses, next_checks]
+  examples:
+    - prompt: Investigate nightly log anomalies after enabling a new tracking option.
+      outcome: Returns stage-localized suspects and a focused follow-up plan.
+

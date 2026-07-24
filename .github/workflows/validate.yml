@@ -1,0 +1,24 @@
+name: Validate definitions
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Validate schemas
+        run: python tooling/validate-definitions.py
+      - name: Generate index
+        run: python tooling/generate-index.py
+      - name: Ensure index is committed
+        run: git diff --exit-code -- index.json
+

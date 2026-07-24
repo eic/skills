@@ -1,0 +1,19 @@
+apiVersion: eic.ai/v1
+kind: Pack
+metadata:
+  id: reconstruction-pack
+  name: Reconstruction Pack
+  version: 1.0.0
+  owners: [eic]
+  tags: [reconstruction, performance]
+spec:
+  summary: Bundle for reconstruction debugging, performance triage, and release communication.
+  agents:
+    - reconstruction-assistant
+    - software-debug-assistant
+  skills:
+    - recon-log-investigation
+    - release-notes
+  prompts:
+    - prompts/templates/performance-regression.md
+

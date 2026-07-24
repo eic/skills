@@ -1,0 +1,24 @@
+apiVersion: eic.ai/v1
+kind: Skill
+metadata:
+  id: pr-review
+  name: Pull Request Review
+  version: 1.0.0
+  owners: [eic]
+  tags: [review, quality]
+spec:
+  purpose: Review pull requests for correctness, risk, and maintainability with actionable comments.
+  procedure:
+    - Identify change intent and touched subsystems.
+    - Inspect high-risk paths first, then broader consistency.
+    - Validate compatibility impacts and migration needs.
+    - Summarize blocking findings and optional follow-ups.
+  constraints:
+    - Prioritize high-confidence findings over style preferences.
+    - Tie each finding to a specific file location and impact.
+  inputs: [pr_diff, related_issue, test_results]
+  outputs: [review_summary, blocking_findings, follow_ups]
+  examples:
+    - prompt: Review a reconstruction refactor with mixed logic and configuration changes.
+      outcome: Returns focused risk findings and concrete remediation suggestions.
+

@@ -1,0 +1,24 @@
+apiVersion: eic.ai/v1
+kind: Skill
+metadata:
+  id: issue-triage
+  name: Issue Triage
+  version: 1.0.0
+  owners: [eic]
+  tags: [triage, operations]
+spec:
+  purpose: Triage incoming issues into reproducible bug reports or actionable enhancement requests.
+  procedure:
+    - Confirm scope, expected behavior, and observed behavior.
+    - Gather reproduction details and environment metadata.
+    - Classify severity and likely ownership area.
+    - Produce a concise next-action checklist.
+  constraints:
+    - Do not classify as fixed without reproduction evidence.
+    - Separate symptom statements from root-cause hypotheses.
+  inputs: [issue_text, logs, environment]
+  outputs: [triage_summary, severity, owner_suggestion, next_steps]
+  examples:
+    - prompt: Triage a crash report with incomplete logs from a nightly build.
+      outcome: Generates a clear follow-up request and provisional ownership path.
+

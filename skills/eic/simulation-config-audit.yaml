@@ -1,0 +1,24 @@
+apiVersion: eic.ai/v1
+kind: Skill
+metadata:
+  id: simulation-config-audit
+  name: Simulation Config Audit
+  version: 1.0.0
+  owners: [eic]
+  tags: [eic, simulation, config]
+spec:
+  purpose: Audit simulation configuration changes for consistency and likely behavioral impact.
+  procedure:
+    - Diff relevant configuration files and defaults.
+    - Identify semantically significant setting changes.
+    - Estimate impact by subsystem and runtime stage.
+    - Propose minimal validation runs to confirm impact.
+  constraints:
+    - Avoid conflating format changes with semantic changes.
+    - Mark uncertain impacts explicitly.
+  inputs: [config_diff, execution_context, known_baseline]
+  outputs: [audit_summary, risk_items, validation_plan]
+  examples:
+    - prompt: Audit simulation defaults after a dependency update.
+      outcome: Highlights high-impact settings and targeted verification actions.
+

@@ -1,0 +1,24 @@
+name: Docs checks
+
+on:
+  pull_request:
+    paths:
+      - "docs/**"
+      - "README.md"
+      - "CONTRIBUTING.md"
+  push:
+    branches: [main]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure markdown files have a top-level heading
+        run: |
+          set -euo pipefail
+          files=$(find docs -name "*.md"; echo README.md; echo CONTRIBUTING.md)
+          for f in $files; do
+            head -n 1 "$f" | grep -E '^# ' > /dev/null
+          done
+
