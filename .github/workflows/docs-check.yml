@@ -17,8 +17,7 @@ jobs:
       - name: Ensure markdown files have a top-level heading
         run: |
           set -euo pipefail
-          files=$(find docs -name "*.md"; echo README.md; echo CONTRIBUTING.md)
+          files=$(find docs -name "*.md" ! -name "_sidebar.md"; echo README.md; echo CONTRIBUTING.md)
           for f in $files; do
             head -n 1 "$f" | grep -E '^# ' > /dev/null
           done
-

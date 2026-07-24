@@ -1,0 +1,14 @@
+* [Overview](overview.md)
+* [Quick start](quickstart.md)
+* [Authoring guide](authoring-guide.md)
+* [Compatibility matrix](compatibility-matrix.md)
+* [Governance](governance.md)
+* [Release process](release-process.md)
+* Integrations
+  * [Claude Desktop](integrations/claude-desktop.md)
+  * [Cursor](integrations/cursor.md)
+  * [VS Code](integrations/vscode.md)
+* Examples
+  * [Analysis notebook helper](examples/analysis-notebook-helper.md)
+  * [Detector debugging](examples/detector-debugging.md)
+  * [Reconstruction tuning](examples/reconstruction-tuning.md)
