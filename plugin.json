@@ -1,0 +1,14 @@
+{
+  "name": "eic-skills",
+  "description": "Reusable EIC agents and skills packaged as a GitHub Copilot CLI plugin.",
+  "version": "1.0.0",
+  "author": {
+    "name": "EIC Collaboration"
+  },
+  "homepage": "https://github.com/eic/skills",
+  "repository": "https://github.com/eic/skills",
+  "license": "MIT",
+  "keywords": ["eic", "copilot", "agents", "skills"],
+  "agents": "copilot-plugin/agents/",
+  "skills": "copilot-plugin/skills/"
+}

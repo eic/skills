@@ -21,6 +21,7 @@ Start with one pack from `packs/`:
 
 Use the integration guide for your tool:
 
+- Copilot CLI plugin: `docs/integrations/copilot-cli.md`
 - Claude Desktop: `docs/integrations/claude-desktop.md`
 - Cursor: `docs/integrations/cursor.md`
 - VS Code: `docs/integrations/vscode.md`
@@ -28,4 +29,3 @@ Use the integration guide for your tool:
 ## 4. Use a prompt template
 
 Pick a template from `prompts/templates/` and adapt it to your repository context.
-
