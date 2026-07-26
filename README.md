@@ -28,6 +28,7 @@ It provides:
 
 - Claude Desktop
 - Cursor
+- OpenAI Codex
 - GitHub Copilot CLI
 - VS Code
 

@@ -1,0 +1,23 @@
+[mcp_servers.github]
+url = "https://api.githubcopilot.com/mcp/"
+
+[mcp_servers.uproot]
+command = "docker"
+args = ["run", "-i", "--rm", "ghcr.io/eic/uproot-mcp-server:latest"]
+
+[mcp_servers.zenodo]
+command = "docker"
+args = ["run", "-i", "--rm", "ghcr.io/eic/zenodo-mcp-server:latest"]
+
+[mcp_servers.xrootd]
+command = "docker"
+args = [
+  "run",
+  "-i",
+  "--rm",
+  "-e",
+  "XROOTD_SERVER=root://dtn-eic.jlab.org",
+  "-e",
+  "XROOTD_BASE_DIR=/volatile/eic/EPIC",
+  "ghcr.io/eic/xrootd-mcp-server:latest"
+]

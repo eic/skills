@@ -21,6 +21,7 @@ Start with one pack from `packs/`:
 
 Use the integration guide for your tool:
 
+- Cursor/Codex/Copilot MCP auto-configuration: `docs/integrations/mcp.md`
 - Copilot CLI plugin: `docs/integrations/copilot-cli.md`
 - Claude Desktop: `docs/integrations/claude-desktop.md`
 - Cursor: `docs/integrations/cursor.md`
