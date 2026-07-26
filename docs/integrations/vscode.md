@@ -1,5 +1,12 @@
 # VS Code integration
 
+## MCP setup
+
+For repository-level MCP auto-configuration (including GitHub MCP), use:
+
+- `.vscode/mcp.json`
+- `docs/integrations/mcp.md`
+
 ## Recommended flow
 
 1. Clone this repository.
@@ -19,4 +26,3 @@
 
 - Refresh from upstream releases.
 - Re-run validation after local updates.
-

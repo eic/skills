@@ -6,6 +6,7 @@
 * [Release process](release-process.md)
 * Integrations
   * [Plugin marketplace](integrations/marketplace.md)
+  * [MCP (Cursor, Codex, Copilot)](integrations/mcp.md)
   * [Claude Desktop](integrations/claude-desktop.md)
   * [Cursor](integrations/cursor.md)
   * [VS Code](integrations/vscode.md)
