@@ -21,4 +21,6 @@ jobs:
         run: python tooling/generate-index.py
       - name: Ensure index is committed
         run: git diff --exit-code -- index.json
+      - name: Agent context files are up to date
+        run: python tooling/generate-agent-context.py --check
 

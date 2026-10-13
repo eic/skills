@@ -1,0 +1,34 @@
+# Facts shared by every site. A site YAML overrides what differs; null means "not
+# recorded", and the templates then tell the agent to find out rather than guess.
+site: null
+title: null
+shared: false            # a login node other people use
+login_host: null
+shell: null              # the login shell outside the container
+home: null
+scratch: null
+scheduler: null          # {name, submit, status, cancel, note}
+container:
+  runtime: apptainer
+  image: eic_xl
+identity: the shared read-only `eicread` Rucio identity
+stores:
+  - name: BNL
+    url: root://epicxrd1.sdcc.bnl.gov:1095
+    base: /eic/EPIC
+    note: has the recent campaigns
+  - name: JLab
+    url: root://dtn2304.jlab.org:8443
+    base: /jlab-osdf-ro/eic/EPIC/volatile
+    note: ""
+find_data_url: https://epic-devcloud.org/prod/pcs/find/
+tutorial_url: https://eic.github.io/tutorial-mcp
+portal_url: https://eic.github.io
+helpdesk_url: https://chat.epic-eic.org/main/channels/helpdesk
+anti_patterns: []        # extra "Do NOT" lines about data, per site
+notes:                   # extra lines per topic, per site
+  scope: []
+  tools: []
+  data: []
+  site: []
+  policies: []

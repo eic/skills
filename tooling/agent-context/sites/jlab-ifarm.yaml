@@ -1,0 +1,20 @@
+# JLab interactive farm. From https://eic.github.io/resources/facilities.html; not
+# confirmed on the machine.
+site: jlab-ifarm
+title: JLab ifarm
+shared: true
+login_host: ifarm.jlab.org
+shell: null
+home: null
+scratch: /volatile/eic (auto-cleaned by a deletion policy)
+scheduler:
+  name: Slurm
+  submit: sbatch
+  status: squeue --me
+  cancel: scancel
+  note: set `--time` and the EIC account
+container:
+  image: /cvmfs/singularity.opensciencegrid.org/eicweb/eic_xl:nightly
+notes:
+  data:
+    - The JLab store `root://dtn2304.jlab.org:8443` is local to this site; prefer it for the campaigns it holds.

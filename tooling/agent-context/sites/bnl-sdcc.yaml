@@ -1,0 +1,19 @@
+# BNL SDCC, the EIC interactive nodes. Confirmed on eicsub02 on 2026-10-12 unless noted.
+site: bnl-sdcc
+title: BNL SDCC (eicsub)
+shared: true
+login_host: eicsub02.sdcc.bnl.gov
+shell: tcsh
+home: /eic/u/<user>
+scratch: null            # not recorded
+scheduler:
+  name: HTCondor
+  submit: condor_submit
+  status: condor_q
+  cancel: condor_rm
+  note: ""
+container:
+  image: /cvmfs/singularity.opensciencegrid.org/eicweb/eic_xl:nightly
+notes:
+  data:
+    - The BNL store `root://epicxrd1.sdcc.bnl.gov:1095` is local to this site; prefer it.

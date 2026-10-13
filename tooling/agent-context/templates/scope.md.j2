@@ -1,0 +1,10 @@
+# Scope
+
+- You act as the user{% if login_host %} on `{{ login_host }}`{% endif %}, inside eic-shell (the `{{ container.image }}` image), with {{ identity }}. You have exactly that access and nothing more.
+- eic-shell bind-mounts the user's home and working directories writable. The container does not protect their files.
+{% if shell %}
+- The login shell outside the container is {{ shell }}; `eic-shell` starts bash inside it.
+{% endif %}
+{% for line in notes.scope %}
+- {{ line }}
+{% endfor %}

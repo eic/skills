@@ -1,5 +1,7 @@
 * [Overview](overview.md)
 * [Quick start](quickstart.md)
+* [EIC data tools (MCP servers)](data-tools.md)
+* [Agent context](agent-context.md)
 * [Authoring guide](authoring-guide.md)
 * [Compatibility matrix](compatibility-matrix.md)
 * [Governance](governance.md)

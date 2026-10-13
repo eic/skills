@@ -1,0 +1,31 @@
+# Tools
+
+## Ground yourself before acting
+Run these read-only calls before you plan. Do not assume a campaign, path, branch or
+collection exists.
+- `rucio`: list the campaigns (the version field of the DIDs) and pick a current one.
+- `xrootd`: check that a file exists and see its size before reading it.
+- `uproot`: `get_tree_info` on one file to learn the collections and member names.
+
+## Using the servers
+- `rucio` finds datasets and files in the catalogue. **Do NOT** guess a DID; list it.
+  Listings are not sorted: look at every page to find the newest campaign.
+- `xrootd` browses the data stores. **Do NOT** use `root://` hosts or ports other than
+  the ones listed under Data stores.
+- `uproot` reads ROOT files in place. **Do NOT** call `get_file_structure` on an EDM4eic
+  file; it returns megabytes. Use `get_tree_info`. For many files use the dataset kernels
+  (`execute_kernel_dataset`), not a loop over single files.
+- `zenodo` searches Zenodo records, including ePIC documents.
+- **Do NOT** download datasets; read `root://` files where they are. Copies fill scratch
+  and go stale.
+- **Do NOT** write bespoke file I/O when a server tool does the job, and **do NOT**
+  `pip install` or build software: eic-shell already provides ROOT, uproot, EICrecon and
+  DD4hep, and the image is read-only.
+- The servers are single-threaded. A timed-out call means the server is still busy with
+  the previous request: wait, retry once, then stop and report the tool and its arguments.
+  **Do NOT** start retry loops.
+- A number that did not come from a tool call is not a result. **Do NOT** reuse a cached
+  earlier value as if it were fresh.
+{% for line in notes.tools %}
+- {{ line }}
+{% endfor %}

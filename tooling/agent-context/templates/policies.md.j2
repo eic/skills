@@ -1,0 +1,12 @@
+# Secrets, destructive actions, help
+
+- **Do NOT** read, print or transmit tokens, proxies or passwords, and **do NOT** write
+  them into files, prompts or your own context. Treat `~/.ssh`, `.env` files and x509 or
+  VOMS proxy files as off-limits.
+- Confirm with the user before deleting, overwriting or mass-moving files.
+- Tutorial: {{ tutorial_url }}
+- Software portal: {{ portal_url }}
+- Report wrong or harmful output in the ePIC Mattermost helpdesk: {{ helpdesk_url }}
+{% for line in notes.policies %}
+- {{ line }}
+{% endfor %}

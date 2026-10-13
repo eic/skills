@@ -1,0 +1,23 @@
+# Shared machines
+
+{% if shared %}
+- `{{ login_host }}` is a login node shared with other users: for editing, light tests
+  and job submission. **Do NOT** run an analysis over a large dataset there; submit it
+  as a batch job with a time limit, after testing on one file.
+{% if scheduler %}
+- Batch system: {{ scheduler.name }}. Submit with `{{ scheduler.submit }}`, check with
+  `{{ scheduler.status }}`, cancel your own jobs with `{{ scheduler.cancel }}`{% if scheduler.note %}; {{ scheduler.note }}{% endif %}.
+{% else %}
+- The batch system is not recorded here. **Do NOT** guess scheduler commands; ask the
+  user which one this site uses.
+{% endif %}
+- Home: {% if home %}`{{ home }}`{% else %}not recorded here, run `echo $HOME`{% endif %}.
+  Scratch for large outputs: {% if scratch %}{{ scratch }}{% else %}not recorded here, ask the user{% endif %}.
+- **Do NOT** leave background processes behind on a login node.
+{% else %}
+- This is the user's own machine. An analysis over a large dataset still belongs on the
+  batch system of the site that holds the data; test on one file first.
+{% endif %}
+{% for line in notes.site %}
+- {{ line }}
+{% endfor %}

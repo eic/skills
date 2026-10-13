@@ -1,0 +1,25 @@
+# Data
+
+## Data stores
+{% for store in stores %}
+- {{ store.name }}: `{{ store.url }}`, base `{{ store.base }}`{% if store.note %} ({{ store.note }}){% endif %}.
+{% endfor %}
+- Which store holds a campaign changes. Check with `xrootd` before assuming.
+- Web search for datasets: {{ find_data_url }}
+{% for line in notes.data %}
+- {{ line }}
+{% endfor %}
+
+## Data layout
+- Data is organised by production campaign, a version such as `26.06.0`.
+- A Rucio DID is scope `epic` plus a path that encodes campaign, detector, process,
+  generator, beams and energy:
+  `epic:/RECO/26.06.0/epic_craterlake/DIS/pythia8.316-1.0/NC/noRad/ep/18x275/...`
+- Reconstruction output: `*.eicrecon.tree.edm4eic.root`, tree `events`, EDM4eic data
+  model on podio. Collections are branches such as `ReconstructedChargedParticles` with
+  members `.PDG`, `.momentum.x`, `.momentum.y`, `.momentum.z` (GeV); `MCParticles` holds
+  the generator truth.
+- **Do NOT** invent collection or member names; verify them with `get_tree_info`.
+{% for line in anti_patterns %}
+- **Do NOT** {{ line }}
+{% endfor %}
