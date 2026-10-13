@@ -16,8 +16,8 @@ This repository includes project-level MCP configuration files that compatible c
 The default `xrootd` server configuration sets:
 
 ```
-XROOTD_SERVER=root://dtn-eic.jlab.org
-XROOTD_BASE_DIR=/volatile/eic/EPIC
+XROOTD_SERVER=root://dtn2304.jlab.org:8443
+XROOTD_BASE_DIR=/jlab-osdf-ro/eic/EPIC/volatile
 ```
 
 ## Recommended runtime strategy
