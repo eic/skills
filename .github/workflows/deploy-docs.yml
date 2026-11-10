@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - "docs/**"
+      - "skills/**"
+      - "packs/**"
+      - "tooling/generate-skills-page.py"
       - ".github/workflows/deploy-docs.yml"
   workflow_dispatch:
 
@@ -22,6 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Generate skills page
+        run: |
+          pip install PyYAML
+          python tooling/generate-skills-page.py
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
