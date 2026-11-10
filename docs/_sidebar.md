@@ -1,5 +1,6 @@
 * [Overview](overview.md)
 * [Quick start](quickstart.md)
+* [Available skills](skills.md)
 * [Authoring guide](authoring-guide.md)
 * [Compatibility matrix](compatibility-matrix.md)
 * [Governance](governance.md)
